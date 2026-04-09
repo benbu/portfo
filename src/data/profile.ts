@@ -1,6 +1,6 @@
 export const profile = {
   name: 'Benjamin Burnett',
-  title: 'Senior Software Developer — Full-Stack, Blockchain & AI',
+  title: 'AI Full-Stack Engineer',
   valueProposition:
     '16+ years building production systems — from enterprise ERP to custom EVM blockchains and AI-driven trading software.',
   email: 'benjam.arlyn@gmail.com',

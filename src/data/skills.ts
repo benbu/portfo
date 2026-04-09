@@ -14,6 +14,6 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     label: 'Tools & DevOps',
-    skills: ['Blockchain (EVM/Web3)', 'MongoDB', 'PostgreSQL', 'Docker', 'NGINX', 'Git', 'Jenkins', 'PowerShell'],
+    skills: ['MongoDB', 'PostgreSQL', 'Docker', 'NGINX', 'Git', 'Jenkins', 'PowerShell'],
   },
 ]

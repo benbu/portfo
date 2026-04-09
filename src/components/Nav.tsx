@@ -3,10 +3,14 @@ import { profile } from '../data/profile'
 import ThemeToggle from './ThemeToggle'
 
 const navLinks = [
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Projects', id: 'projects' },
+  { label: 'Skills', id: 'skills' },
+  { label: 'Contact', id: 'contact' },
 ]
+
+function scrollTo(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+}
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -15,17 +19,23 @@ export default function Nav() {
     <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
       <nav className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logo / Name */}
-        <a href="#hero" className="text-sm font-semibold tracking-tight text-gray-900 dark:text-gray-100">
+        <button
+          onClick={() => scrollTo('hero')}
+          className="text-sm font-semibold tracking-tight text-gray-900 dark:text-gray-100"
+        >
           {profile.name}
-        </a>
+        </button>
 
         {/* Desktop links */}
         <ul className="hidden sm:flex items-center gap-6 text-sm text-gray-600 dark:text-gray-400">
           {navLinks.map(link => (
-            <li key={link.href}>
-              <a href={link.href} className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+            <li key={link.id}>
+              <button
+                onClick={() => scrollTo(link.id)}
+                className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+              >
                 {link.label}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
@@ -60,14 +70,13 @@ export default function Nav() {
         <div className="sm:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 px-4 pb-4">
           <ul className="flex flex-col gap-3 pt-3 text-sm text-gray-600 dark:text-gray-400">
             {navLinks.map(link => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
+              <li key={link.id}>
+                <button
+                  onClick={() => { scrollTo(link.id); setMenuOpen(false) }}
                   className="block hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
                 >
                   {link.label}
-                </a>
+                </button>
               </li>
             ))}
             <li>

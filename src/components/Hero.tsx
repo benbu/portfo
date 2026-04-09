@@ -6,6 +6,11 @@ export default function Hero() {
       id="hero"
       className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center text-center px-4 sm:px-6 py-20"
     >
+      <img
+        src="/images/portrait.jpg"
+        alt={profile.name}
+        className="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover object-top ring-2 ring-gray-200 dark:ring-gray-700 mb-6"
+      />
       <p className="text-sm font-medium tracking-widest uppercase text-indigo-600 dark:text-indigo-400 mb-4">
         Available for work
       </p>
@@ -19,12 +24,12 @@ export default function Hero() {
         {profile.valueProposition}
       </p>
       <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-        <a
-          href="#projects"
+        <button
+          onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           className="px-6 py-3 rounded-md bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm transition-colors"
         >
           View My Work
-        </a>
+        </button>
         <a
           href={profile.resumeUrl}
           download
