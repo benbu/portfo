@@ -9,7 +9,7 @@ export default function Projects() {
           Featured Projects
         </h2>
         <p className="mt-3 text-center text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-sm sm:text-base">
-          A selection of work spanning blockchain infrastructure, AI/ML systems, and enterprise software.
+          A selection of personal projects spanning real-time collaboration, AI integration, desktop apps, and algorithmic trading — built across a decade of side work.
         </p>
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map(project => (

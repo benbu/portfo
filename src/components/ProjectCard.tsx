@@ -25,11 +25,16 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       {/* Body */}
       <div className="flex flex-col flex-1 p-5 gap-3">
-        <h3 className="font-semibold text-gray-900 dark:text-gray-100">
-          {project.slug
-            ? <Link to={`/projects/${project.slug}`} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">{project.title}</Link>
-            : project.title}
-        </h3>
+        <div className="flex items-center justify-between gap-2">
+          <h3 className="font-semibold text-gray-900 dark:text-gray-100">
+            {project.slug
+              ? <Link to={`/projects/${project.slug}`} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">{project.title}</Link>
+              : project.title}
+          </h3>
+          {project.year && (
+            <span className="text-xs text-gray-400 dark:text-gray-500 flex-shrink-0">{project.year}</span>
+          )}
+        </div>
         <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed flex-1">
           {project.description}
         </p>
@@ -76,27 +81,24 @@ export default function ProjectCard({ project }: { project: Project }) {
             </svg>
             Source
           </a>
-          <a
-            href={project.demoUrl}
-            {...(project.demoIsDownload ? { download: true } : { target: '_blank', rel: 'noopener noreferrer' })}
-            aria-label={`${project.title} ${project.demoLabel ?? 'live demo'}`}
-            aria-disabled={!hasDemo}
-            className={`flex items-center gap-1.5 text-xs font-medium transition-colors ${
-              hasDemo
-                ? 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100'
-                : 'text-gray-300 dark:text-gray-700 cursor-not-allowed pointer-events-none'
-            }`}
-          >
-            {project.demoIsDownload
-              ? <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-              : <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-            }
-            {project.demoLabel ?? 'Live Demo'}
-          </a>
+          {hasDemo && (
+            <a
+              href={project.demoUrl}
+              {...(project.demoIsDownload ? { download: true } : { target: '_blank', rel: 'noopener noreferrer' })}
+              aria-label={`${project.title} ${project.demoLabel ?? 'live demo'}`}
+              className="flex items-center gap-1.5 text-xs font-medium transition-colors text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+            >
+              {project.demoIsDownload
+                ? <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                : <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+              }
+              {project.demoLabel ?? 'Live Demo'}
+            </a>
+          )}
         </div>
       </div>
     </article>

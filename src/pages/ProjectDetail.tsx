@@ -1,11 +1,19 @@
 import { useParams, Navigate, useNavigate } from 'react-router-dom'
 import { collabCanvasDetail } from '../data/projectDetails/collab-canvas'
 import { conchDetail } from '../data/projectDetails/conch'
+import { clipForgeDetail } from '../data/projectDetails/clip-forge'
+import { remotoconDetail } from '../data/projectDetails/remotocon'
+import { cryptoXDetail } from '../data/projectDetails/cryptox'
+import { penguinPerilDetail } from '../data/projectDetails/penguin-peril'
 import type { ProjectDetailData } from '../data/projectDetails/types'
 
 const detailMap: Record<string, ProjectDetailData> = {
   'collab-canvas': collabCanvasDetail,
   'conch': conchDetail,
+  'clip-forge': clipForgeDetail,
+  'remotocon': remotoconDetail,
+  'cryptox': cryptoXDetail,
+  'penguin-peril': penguinPerilDetail,
 }
 
 export default function ProjectDetail() {
@@ -37,7 +45,12 @@ export default function ProjectDetail() {
 
         {/* Hero */}
         <header className="mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100">{detail.title}</h1>
+          <div className="flex items-baseline gap-3">
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100">{detail.title}</h1>
+            {detail.year && (
+              <span className="text-sm text-gray-400 dark:text-gray-500">{detail.year}</span>
+            )}
+          </div>
           <p className="mt-3 text-lg text-gray-500 dark:text-gray-400 leading-relaxed">{detail.tagline}</p>
 
           {/* Tech tags */}
@@ -90,16 +103,27 @@ export default function ProjectDetail() {
         </header>
 
         {/* Video */}
-        <div className="mb-12 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-950">
-          <video
-            src={detail.videoUrl}
-            controls
-            playsInline
-            preload="metadata"
-            className="w-full"
-            aria-label={`${detail.title} demo video`}
-          />
-        </div>
+        {detail.videoUrl && (
+          <div className="mb-12 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-950">
+            {detail.videoIsEmbed
+              ? <iframe
+                  src={detail.videoUrl}
+                  className="w-full aspect-video"
+                  allow="autoplay"
+                  allowFullScreen
+                  aria-label={`${detail.title} demo video`}
+                />
+              : <video
+                  src={detail.videoUrl}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full"
+                  aria-label={`${detail.title} demo video`}
+                />
+            }
+          </div>
+        )}
 
         {/* Overview */}
         <section className="mb-12">

@@ -11,12 +11,14 @@ export interface ProjectDetailDecision {
 export interface ProjectDetailData {
   slug: string
   title: string
+  year?: number
   tagline: string
   demoUrl: string
   demoLabel?: string
   demoIsDownload?: boolean
   githubUrl: string
-  videoUrl: string
+  videoUrl?: string
+  videoIsEmbed?: boolean
   imageUrl: string
   techTags: string[]
   overview: string

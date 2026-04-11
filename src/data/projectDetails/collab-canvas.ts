@@ -3,10 +3,12 @@ import type { ProjectDetailData } from './types'
 export const collabCanvasDetail: ProjectDetailData = {
   slug: 'collab-canvas',
   title: 'Collab Canvas',
+  year: 2025,
   tagline: 'A real-time collaborative whiteboard built from scratch with React, Firebase, and an AI assistant.',
   demoUrl: '/demos/collab-canvas/',
   githubUrl: 'https://github.com/benbu/collab-canvas',
-  videoUrl: '/video/CollabCanvasDemo.mp4',
+  videoUrl: 'https://drive.google.com/file/d/1OId7svsNkF7M-PvrnGaxSIGhybXMdKIy/preview',
+  videoIsEmbed: true,
   imageUrl: '/images/collab.gif',
   techTags: ['React 18', 'TypeScript', 'Firebase', 'Konva.js', 'OpenAI GPT-4o', 'Vite', 'Tailwind CSS', 'Vitest'],
   overview: `Collab Canvas is a multiplayer whiteboard where multiple users draw, move, and edit shapes on a shared canvas simultaneously. Think lightweight Figma or Miro — users join a room, see each other's live cursors and presence avatars in real time, and all changes sync instantly across every connected device via Firebase Realtime Database. It also includes an AI assistant that interprets natural language commands ("draw a blue rectangle in the top left") and executes structured tool calls on the canvas.`,
