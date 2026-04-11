@@ -1,5 +1,6 @@
 import { profile } from '../data/profile'
 import HeroBg from './HeroBg'
+import { asset } from '../utils/asset'
 
 export default function Hero() {
   return (
@@ -27,7 +28,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center">
         <img
-          src="/images/portrait.jpg"
+          src={asset('/images/portrait.jpg')}
           alt={profile.name}
           className="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover object-top ring-2 ring-gray-200 dark:ring-gray-700 mb-6"
         />
@@ -51,7 +52,7 @@ export default function Hero() {
             View My Work
           </button>
           <a
-            href={profile.resumeUrl}
+            href={asset(profile.resumeUrl)}
             download
             className="px-6 py-3 rounded-md border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 font-medium text-sm transition-colors"
           >

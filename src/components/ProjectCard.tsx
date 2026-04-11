@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { Project } from '../data/projects'
+import { asset } from '../utils/asset'
 
 export default function ProjectCard({ project }: { project: Project }) {
   const hasGithub = project.githubUrl !== '#'
@@ -8,7 +9,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   const ImageBlock = (
     <div className="aspect-video overflow-hidden bg-gray-100 dark:bg-gray-800">
       <img
-        src={project.imageUrl}
+        src={asset(project.imageUrl)}
         alt={project.title}
         className="w-full h-full object-cover"
         loading="lazy"
@@ -83,7 +84,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           </a>
           {hasDemo && (
             <a
-              href={project.demoUrl}
+              href={asset(project.demoUrl)}
               {...(project.demoIsDownload ? { download: true } : { target: '_blank', rel: 'noopener noreferrer' })}
               aria-label={`${project.title} ${project.demoLabel ?? 'live demo'}`}
               className="flex items-center gap-1.5 text-xs font-medium transition-colors text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"

@@ -1,4 +1,5 @@
 import { useParams, Navigate, useNavigate } from 'react-router-dom'
+import { asset } from '../utils/asset'
 import { collabCanvasDetail } from '../data/projectDetails/collab-canvas'
 import { conchDetail } from '../data/projectDetails/conch'
 import { clipForgeDetail } from '../data/projectDetails/clip-forge'
@@ -69,7 +70,7 @@ export default function ProjectDetail() {
           <div className="mt-6 flex flex-wrap gap-3">
             {detail.demoUrl !== '#' && (
               <a
-                href={detail.demoUrl}
+                href={asset(detail.demoUrl)}
                 {...(detail.demoIsDownload
                   ? { download: true }
                   : { target: '_blank', rel: 'noopener noreferrer' })}
@@ -114,7 +115,7 @@ export default function ProjectDetail() {
                   aria-label={`${detail.title} demo video`}
                 />
               : <video
-                  src={detail.videoUrl}
+                  src={asset(detail.videoUrl)}
                   controls
                   playsInline
                   preload="metadata"
@@ -194,7 +195,7 @@ export default function ProjectDetail() {
           </button>
           {detail.demoUrl !== '#' && (
             <a
-              href={detail.demoUrl}
+              href={asset(detail.demoUrl)}
               {...(detail.demoIsDownload
                 ? { download: true }
                 : { target: '_blank', rel: 'noopener noreferrer' })}
