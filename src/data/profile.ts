@@ -6,5 +6,5 @@ export const profile = {
   email: 'benjam.arlyn@gmail.com',
   github: 'https://github.com/benbu',
   linkedin: 'https://www.linkedin.com/in/realbenburnett/',
-  resumeUrl: '/Resume.pdf',
+  resumeUrl: '/ResumeBenBurnett.pdf',
 }

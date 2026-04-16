@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { profile } from '../data/profile'
+import { asset } from '../utils/asset'
 import ThemeToggle from './ThemeToggle'
 
 const navLinks = [
@@ -44,7 +45,7 @@ export default function Nav() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <a
-            href={profile.resumeUrl}
+            href={asset(profile.resumeUrl)}
             download
             className="hidden sm:inline-flex items-center px-3 py-1.5 text-sm font-medium rounded-md border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           >
@@ -81,7 +82,7 @@ export default function Nav() {
             ))}
             <li>
               <a
-                href={profile.resumeUrl}
+                href={asset(profile.resumeUrl)}
                 download
                 className="inline-flex items-center px-3 py-1.5 text-sm font-medium rounded-md border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300"
               >
