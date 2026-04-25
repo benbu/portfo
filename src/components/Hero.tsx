@@ -30,7 +30,7 @@ export default function Hero() {
         <img
           src={asset('/images/portrait.jpg')}
           alt={profile.name}
-          className="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover object-top ring-2 ring-gray-200 dark:ring-gray-700 mb-6"
+          className="h-48 rounded-full object-cover object-top ring-2 ring-gray-200 dark:ring-gray-700 mb-6"
         />
         <p className="text-sm font-medium tracking-widest uppercase text-indigo-600 dark:text-indigo-400 mb-4">
           Available for work
