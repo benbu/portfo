@@ -1,0 +1,5 @@
+earthmilky.jpg
+libgdx.png
+lsans-15.fnt
+lsans-15.png
+shoot.wav

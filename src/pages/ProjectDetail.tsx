@@ -6,6 +6,7 @@ import { clipForgeDetail } from '../data/projectDetails/clip-forge'
 import { remotoconDetail } from '../data/projectDetails/remotocon'
 import { cryptoXDetail } from '../data/projectDetails/cryptox'
 import { penguinPerilDetail } from '../data/projectDetails/penguin-peril'
+import { shapeBlaster3dDetail } from '../data/projectDetails/shapeblaster3d'
 import type { ProjectDetailData } from '../data/projectDetails/types'
 
 const detailMap: Record<string, ProjectDetailData> = {
@@ -15,6 +16,7 @@ const detailMap: Record<string, ProjectDetailData> = {
   'remotocon': remotoconDetail,
   'cryptox': cryptoXDetail,
   'penguin-peril': penguinPerilDetail,
+  'shapeblaster3d': shapeBlaster3dDetail,
 }
 
 export default function ProjectDetail() {

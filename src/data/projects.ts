@@ -48,6 +48,17 @@ export const projects: Project[] = [
     slug: 'clip-forge',
   },
   {
+    title: 'Shape Blaster 3D',
+    year: 2025,
+    description:
+      'A first-person 3D dungeon shooter built in Java with libGDX and compiled to WebGL via GWT. Fight through procedurally generated levels, hunt key-carrying enemies to unlock doors, and collect weapon upgrades across infinitely scaling floors.',
+    techTags: ['Java', 'libGDX', 'GWT', 'WebGL', 'OpenGL ES 2.0', 'Gradle'],
+    githubUrl: 'https://github.com/benbu/shapeblaster3d',
+    demoUrl: '/demos/shapeblaster3d/',
+    imageUrl: '/images/shapeblaster3d.gif',
+    slug: 'shapeblaster3d',
+  },
+  {
     title: 'Penguin Peril',
     year: 2015,
     description:
